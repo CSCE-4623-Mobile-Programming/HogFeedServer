@@ -2,12 +2,10 @@ package com.example;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "event")
 public class Event
 {
 
@@ -15,12 +13,20 @@ public class Event
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  @Column (name = "title")
   @NotEmpty
   private String title;
 
+  @Column (name = "latitude")
   private String latitude;
+
+  @Column (name = "longitude")
   private String longitude;
+
+  @Column (name = "location")
   private String location;
+
+  @Column (name = "quantity")
   private int quantity;
 
 

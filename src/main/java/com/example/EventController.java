@@ -38,7 +38,8 @@ public class EventController
   }
 
   @RequestMapping
-  public List<Event> all() {
+  public List<Event> all()
+  {
     return repository.findAll();
   }
 }
