@@ -10,6 +10,7 @@ public class Event
 {
 
   @Id
+  //@TableGenerator(name = "EVENT", table = )
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 

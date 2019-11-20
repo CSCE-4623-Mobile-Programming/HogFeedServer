@@ -40,15 +40,6 @@ public class EventController
   @RequestMapping(value = "/all", method = RequestMethod.GET)
   public List<Event> all()
   {
-    try
-    {
       return repository.findAll();
-    }
-    catch (Exception e)
-    {
-      System.out.println(e);
-      return null;
-    }
-
   }
 }
