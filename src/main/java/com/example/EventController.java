@@ -46,7 +46,8 @@ public class EventController
     }
     catch (Exception e)
     {
-      return (List<Event>) e;
+      System.out.println(e);
+      return null;
     }
 
   }
