@@ -5,12 +5,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "events")
+@Table(name = "event")
 public class Event
 {
 
   @Id
-  @TableGenerator(name = "EVENTS")
+  @TableGenerator(name = "EVENT")
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
