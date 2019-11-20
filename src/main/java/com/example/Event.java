@@ -31,9 +31,7 @@ public class Event
 
 
   // Getters
-  public Long getId() {
-    return id;
-  }
+  public Long getId()  { return id; }
 
   public String getTitle() { return title; }
 

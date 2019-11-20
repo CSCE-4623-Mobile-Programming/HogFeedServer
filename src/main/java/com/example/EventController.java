@@ -37,7 +37,7 @@ public class EventController
     return get(event.getId());
   }
 
-  @RequestMapping
+  @RequestMapping(value = "/all", method = RequestMethod.GET)
   public List<Event> all()
   {
     return repository.findAll();
