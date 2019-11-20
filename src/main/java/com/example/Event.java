@@ -11,7 +11,6 @@ public class Event
 
   @Id
   @TableGenerator(name = "EVENT")
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
   @Column (name = "title", length = 65536)
