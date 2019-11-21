@@ -1,12 +1,18 @@
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.RequestingUserName;
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -50,12 +56,31 @@ public class EventController
 
 
   @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
-  public String get( @PathVariable String p_name )
+  public ResponseEntity<byte[]> getPicture( @PathVariable String p_name ) throws IOException
   {
     // Get file path
     String filePathString = "/com/example/pictures/" + p_name + ".jpg";
-    File picture = new File(filePathString.trim());
 
+
+    ClassPathResource imageFile = new ClassPathResource(filePathString);
+
+    try
+    {
+      byte[] imageBytes = StreamUtils.copyToByteArray(imageFile.getInputStream());
+
+      return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+    }
+    catch (Exception e)
+    {
+      return null;
+    }
+
+
+
+
+    //Image picture = new Image(filePathString.trim());
+
+    /*
     if ( picture.exists())
     {
       return "Yup";
@@ -64,5 +89,7 @@ public class EventController
     {
       return "Nah";
     }
+
+     */
   }
 }
