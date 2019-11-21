@@ -1,8 +1,6 @@
 package com.example;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import sun.util.resources.Bundles;
-
 import javax.persistence.*;
 
 @Entity
