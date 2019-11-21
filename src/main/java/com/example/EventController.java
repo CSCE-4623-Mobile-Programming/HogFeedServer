@@ -62,7 +62,7 @@ public class EventController
     PrintStream out=System.out;
 
     // Get file path
-    String filePathString = "/com/example/pictures/" + p_name + ".jpg";
+    String filePathString = "/app/src/main/java/com/example/pictures/" + p_name + ".jpg";
 
 
     ClassPathResource imageFile = new ClassPathResource(filePathString);
