@@ -75,7 +75,7 @@ public class EventController
     }
     catch (Exception e)
     {
-      out.println("Errored");
+      out.println("Errored:   " + e);
       return null;
     }
 
