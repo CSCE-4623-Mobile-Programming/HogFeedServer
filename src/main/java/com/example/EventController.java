@@ -50,7 +50,7 @@ public class EventController
 
 
   @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
-  public File getEventPicture(@RequestParam String p_name)
+  public File get( @PathVariable String p_name )
   {
     String filePathString = "com/example/pictures/" + p_name + ".jpg";
     File picture = new File(filePathString.trim());
@@ -64,5 +64,6 @@ public class EventController
       return null;
     }
   }
+
 
 }
