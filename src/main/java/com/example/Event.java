@@ -1,6 +1,7 @@
 package com.example;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import sun.util.resources.Bundles;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ public class Event
 {
 
   @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
   @TableGenerator(name = "EVENTS")
   private long id;
 
