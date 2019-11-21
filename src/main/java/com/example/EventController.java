@@ -52,6 +52,7 @@ public class EventController
   @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
   public File get( @PathVariable String p_name )
   {
+    // Get file path
     String filePathString = "com/example/pictures/" + p_name + ".jpg";
     File picture = new File(filePathString.trim());
 
