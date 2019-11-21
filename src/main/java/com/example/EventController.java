@@ -13,6 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.List;
 
 @RestController
@@ -58,6 +59,8 @@ public class EventController
   @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
   public ResponseEntity<byte[]> getPicture( @PathVariable String p_name ) throws IOException
   {
+    PrintStream out=System.out;
+
     // Get file path
     String filePathString = "/com/example/pictures/" + p_name + ".jpg";
 
@@ -72,6 +75,7 @@ public class EventController
     }
     catch (Exception e)
     {
+      out.println("Errored");
       return null;
     }
 
