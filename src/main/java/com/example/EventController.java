@@ -65,6 +65,4 @@ public class EventController
       return null;
     }
   }
-
-
 }
