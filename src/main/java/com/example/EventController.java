@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
 
+import static org.apache.tomcat.util.log.SystemLogHandler.logs;
+
 @RestController
 @RequestMapping("/events")
 public class EventController
@@ -52,6 +54,7 @@ public class EventController
   @RequestMapping(value = "/all", method = RequestMethod.GET)
   public List<Event> all()
   {
+
       return repository.findAll();
   }
 
