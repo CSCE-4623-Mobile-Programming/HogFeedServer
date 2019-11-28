@@ -7,8 +7,13 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
+import sun.security.util.IOUtils;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.net.URL;
 import java.util.List;
 
 
@@ -48,7 +53,6 @@ public class EventController
   @RequestMapping(value = "/all", method = RequestMethod.GET)
   public List<Event> all()
   {
-
       return repository.findAll();
   }
 
@@ -56,6 +60,25 @@ public class EventController
   @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
   public ResponseEntity<byte[]> getPicture( @PathVariable String p_name ) throws IOException
   {
+    return null;
+    /*
+    Image image = null;
+    try
+    {
+      URL url = new URL("http://www.yahoo.com/image_to_read.jpg");
+      image = ImageIO.read(url);
+
+
+      return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(StreamUtils.copyToByteArray(image);
+
+    }
+    catch (IOException e)
+    {
+    }
+
+     */
+
+    /*
     PrintStream out=System.out;
 
     // Get file path
@@ -75,5 +98,7 @@ public class EventController
       out.println("Errored:   " + e);
       return null;
     }
+
+     */
   }
 }
