@@ -7,16 +7,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
-
-import javax.print.attribute.standard.RequestingUserName;
-import javax.swing.*;
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
 
-import static org.apache.tomcat.util.log.SystemLogHandler.logs;
 
 @RestController
 @RequestMapping("/events")
@@ -81,22 +75,5 @@ public class EventController
       out.println("Errored:   " + e);
       return null;
     }
-
-
-
-
-    //Image picture = new Image(filePathString.trim());
-
-    /*
-    if ( picture.exists())
-    {
-      return "Yup";
-    }
-    else
-    {
-      return "Nah";
-    }
-
-     */
   }
 }
