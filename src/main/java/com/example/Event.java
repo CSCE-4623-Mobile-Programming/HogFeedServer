@@ -10,7 +10,7 @@ public class Event
 
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  //@TableGenerator(name = "events")
+  @TableGenerator(name = "events")
   private long id;
 
   @Column (name = "title", length = 65536)
