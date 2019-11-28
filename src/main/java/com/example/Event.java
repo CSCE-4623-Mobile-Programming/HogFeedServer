@@ -29,6 +29,9 @@ public class Event
   @Column (name = "quantity", length = 65536)
   private int quantity;
 
+  @Column(name = "pictureid", length = 65536)
+  private String pictureID;
+
 
   // Getters
   public Long getId()  { return id; }
@@ -42,5 +45,7 @@ public class Event
   public String getLocation() { return location; }
 
   public int getQuantity() { return quantity; }
+
+  public String pictureID() { return pictureID;}
 
 }
