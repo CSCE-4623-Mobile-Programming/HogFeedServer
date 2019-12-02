@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 import java.util.List;
 
 
@@ -48,49 +46,4 @@ public class EventController
       return repository.findAll();
   }
 
-
-  @RequestMapping(value = "/picture/{p_name}", method = RequestMethod.GET)
-  public ResponseEntity<byte[]> getPicture( @PathVariable String p_name ) throws IOException
-  {
-    return null;
-    /*
-    Image image = null;
-    try
-    {
-      URL url = new URL("http://www.yahoo.com/image_to_read.jpg");
-      image = ImageIO.read(url);
-
-
-      return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(StreamUtils.copyToByteArray(image);
-
-    }
-    catch (IOException e)
-    {
-    }
-
-     */
-
-    /*
-    PrintStream out=System.out;
-
-    // Get file path
-    String filePathString = "/app/src/main/java/com/example/pictures/" + p_name + ".jpg";
-
-
-    ClassPathResource imageFile = new ClassPathResource(filePathString);
-
-    try
-    {
-      byte[] imageBytes = StreamUtils.copyToByteArray(imageFile.getInputStream());
-
-      return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
-    }
-    catch (Exception e)
-    {
-      out.println("Errored:   " + e);
-      return null;
-    }
-
-     */
-  }
 }
