@@ -48,7 +48,7 @@ public class EventController
 
 
   // This POST method deletes an event using it's ID
-  @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
   public String delete(@PathVariable("id") Long id)
   {
       try
