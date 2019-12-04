@@ -52,6 +52,5 @@ public class Event
   public String pictureID() { return pictureID;}
 
   public String getDescription() { return description; }
-
-
+  
 }

@@ -48,7 +48,7 @@ public class EventController
 
 
   // This POST method deletes an event using it's ID
-  @DeleteMapping(value = "/delete/{id}")
+  @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
   public String delete(@PathVariable("id") Long id)
   {
     // Check if element is on dB
