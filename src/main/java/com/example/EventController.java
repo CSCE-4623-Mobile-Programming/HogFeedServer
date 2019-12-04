@@ -51,23 +51,23 @@ public class EventController
   @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
   public String delete(@PathVariable("id") Long id)
   {
-    // Check if element is on dB
-    Event event = repository.findOne(id);
-    if (null == event)
-    {
-      return "Element Not Found on Database";
-    }
-    else
-    {
       try
       {
-        repository.delete(id);
-        return (id + " element deleted from Database");
+        // Check if element is on dB
+        Event event = repository.findOne(id);
+        if (null == event)
+        {
+          return "Element Not Found on Database";
+        }
+        else
+        {
+          repository.delete(id);
+          return (id + " element deleted from Database");
+        }
       }
       catch (Exception e)
       {
         return e.toString();
       }
-    }
   }
 }
