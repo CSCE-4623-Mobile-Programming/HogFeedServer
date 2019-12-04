@@ -46,4 +46,28 @@ public class EventController
       return repository.findAll();
   }
 
+
+  // This POST method deletes an event using it's ID
+  @DeleteMapping(value = "/delete/{id}")
+  public String delete(@PathVariable("id") Long id)
+  {
+    // Check if element is on dB
+    Event event = repository.findOne(id);
+    if (null == event)
+    {
+      return "Element Not Found on Database";
+    }
+    else
+    {
+      try
+      {
+        repository.delete(id);
+        return (id + " element deleted from Database");
+      }
+      catch (Exception e)
+      {
+        return e.toString();
+      }
+    }
+  }
 }
