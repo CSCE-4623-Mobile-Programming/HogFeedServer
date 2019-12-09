@@ -29,7 +29,7 @@ public class Event
   private int quantity;
 
   @Column(name = "pictureid", length = 65536)
-  private String pictureID;
+  private String pictureid;
 
   @Column(name = "description", length = 65536)
   private String description;
@@ -48,7 +48,7 @@ public class Event
 
   public int getQuantity() { return quantity; }
 
-  public String getpictureID() { return pictureID;}
+  public String getPictureid() { return pictureid;}
 
   public String getDescription() { return description; }
 
