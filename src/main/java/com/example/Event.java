@@ -29,7 +29,6 @@ public class Event
   private int quantity;
 
   @Column(name = "pictureid", length = 65536)
-  @NotEmpty
   private String pictureID;
 
   @Column(name = "description", length = 65536)
