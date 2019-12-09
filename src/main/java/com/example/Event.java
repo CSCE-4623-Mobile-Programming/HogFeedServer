@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Table(name = "events")
 public class Event
 {
-
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   @TableGenerator(name = "events")
@@ -52,5 +51,5 @@ public class Event
   public String pictureID() { return pictureID;}
 
   public String getDescription() { return description; }
-  
+
 }
